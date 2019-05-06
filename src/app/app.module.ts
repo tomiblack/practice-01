@@ -14,7 +14,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { EditPostComponent } from './components/edit-post/edit-post.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-const matImports = [
+export const matImports = [
   MatButtonModule,
   MatInputModule,
   MatSortModule,
