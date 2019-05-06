@@ -4,8 +4,3 @@ export interface Post {
   author: string;
   text: string;
 }
-
-export interface UpdatePost {
-  title: string;
-  text: string;
-}

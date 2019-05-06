@@ -1,10 +1,26 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode", "text": "JSON Server is damn good." },
-	{ "id": 2, "title": "my other post", "author": "me", "text": "Another post from me" }
+    {
+      "title": "json-server",
+      "text": "JSON Server is damn good.",
+      "author": "typicode",
+      "id": 1
+    },
+    {
+      "title": "my other post",
+      "text": "Another post from me",
+      "author": "me",
+      "id": 2
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "typicode"
+  }
 }

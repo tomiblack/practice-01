@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Post, UpdatePost } from '../models/post.model';
+import { Post } from '../models/post.model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -16,7 +16,7 @@ export class PostService {
     return this.httpClient.get<Post>(environment.baseUrl + `/posts/${id}`);
   }
 
-  update(id: string, post: UpdatePost): Observable<Post> {
+  update(id: string, post: Post): Observable<Post> {
     return this.httpClient.put<Post>(
       environment.baseUrl + `/posts/${id}`,
       post
