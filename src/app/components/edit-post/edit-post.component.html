@@ -1,0 +1,25 @@
+<ng-container *ngIf="post$ | async as post">
+  <h2>Edit "{{ post.title }}"</h2>
+
+  <div>Author: {{ post.author }}</div>
+
+  <ng-container *ngIf="form$ | async as form">
+    <form [formGroup]="form" (ngSubmit)="submit(post.id, form.value)">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          formControlName="title"
+          placeholder="Title"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput formControlName="text" placeholder="Text"></textarea>
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button color="primary">Submit</button>
+      </div>
+    </form>
+  </ng-container>
+</ng-container>

@@ -1,0 +1,10 @@
+.table-container {
+  display: flex;
+  & table {
+    flex-grow: 1;
+    & tr.mat-row:hover {
+      cursor: pointer;
+      background-color: lightyellow;
+    }
+  }
+}

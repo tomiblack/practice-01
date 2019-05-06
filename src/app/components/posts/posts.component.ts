@@ -5,11 +5,12 @@ import {
   ViewChild
 } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Post } from '../models/post.model';
-import { PostService } from '../services/post.service';
+import { Post } from '../../models/post.model';
+import { PostService } from '../../services/post.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { map } from 'rxjs/operators';
 import { MatSort } from '@angular/material/sort';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -25,7 +26,7 @@ export class PostsComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit() {
-    this.posts$ = this.postService.getPosts().pipe(
+    this.posts$ = this.postService.getAll().pipe(
       map(posts => {
         const tableDataSource = new MatTableDataSource<Post>(posts);
         tableDataSource.sort = this.sort;
@@ -34,5 +35,9 @@ export class PostsComponent implements OnInit {
     );
   }
 
-  constructor(private postService: PostService) {}
+  navigate(id: number) {
+    this.router.navigate(['post', id]);
+  }
+
+  constructor(private postService: PostService, private router: Router) {}
 }
